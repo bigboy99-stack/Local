@@ -124,7 +124,7 @@ sub.addEventListener('click', async (e) => {
 
     try {
         // 3. Send to Backend
-        const response = await fetch('https://worker-js.helldogg42.workers.dev/gem', {
+        const response = await fetch('http://localhost:3004/gem', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ chatbot: prompt })
