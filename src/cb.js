@@ -118,7 +118,7 @@ sub.addEventListener('click', async (e) => {
     inp.style.height = 'auto'; // Reset height
     sub.disabled = true;
 
-    // // 2. Create Placeholder for Bot Response with Loading Animation
+    // 2. Create Placeholder for Bot Response with Loading Animation
     // const botMessageDiv = addMessage('Thinking', 'bot-msg');
     // botMessageDiv.classList.add('loading-dots');
 
