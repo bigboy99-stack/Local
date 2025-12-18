@@ -3,5 +3,5 @@ node_modules
 webpack.config.js
 wrangler.toml
 worker.js
-./src/pracserver.html
-./src/pracserver.mjs
+former
+projects

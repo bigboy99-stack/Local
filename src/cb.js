@@ -52,7 +52,7 @@ ema.onclick = () => {
   ema.select();
   ema.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(ema.value);
-  alert("Copied the text: " + ema.value);
+  alert(`${ema.value} has been copied to your clip board`);
 }
 function toggleDropdown(button, targetElement, activeClass) {
   const isExpanded = button.getAttribute("aria-expanded") === "true";
@@ -118,13 +118,13 @@ sub.addEventListener('click', async (e) => {
     inp.style.height = 'auto'; // Reset height
     sub.disabled = true;
 
-    // 2. Create Placeholder for Bot Response with Loading Animation
-    // const botMessageDiv = addMessage('Thinking', 'bot-msg');
-    // botMessageDiv.classList.add('loading-dots');
+    let rr = reply('chat server');
+    rr.textContent = 'thinking...'
+    setTimeout(()=>ch.append(rr), 400)
 
     try {
         // 3. Send to Backend
-        const response = await fetch('http://localhost:3004/gem', {
+        const response = await fetch('http://127.0.0.1:3004/gem', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ chatbot: prompt })
@@ -138,10 +138,6 @@ sub.addEventListener('click', async (e) => {
         // 4. Handle Streaming Response
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
-        
-        // Clear "Thinking..." text and remove animation class
-        // botMessageDiv.textContent = ''; 
-        // botMessageDiv.classList.remove('loading-dots');
 
         let ran2 = reply('chat server');
         ch.append(ran2);
@@ -157,10 +153,9 @@ sub.addEventListener('click', async (e) => {
 
       } catch (err) {
         alert(err.message);
-        // botMessageDiv.classList.remove('loading-dots');
       } finally {
         sub.disabled = false;
-        inp.focus()
+        inp.focus();
       }
 });
 
@@ -171,5 +166,12 @@ function reply(className) {
     // ele2.className = 'cbs'
     // ele2.textContent = sender;
     // ele1.append(ele2)
+    return ele1;
+}
+
+function think(className) {
+    let ele1 = document.createElement('div');
+    ele1.className = className;
+    ele1.textContent = 'thinking...'
     return ele1;
 }

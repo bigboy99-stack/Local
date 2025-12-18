@@ -19,8 +19,12 @@ const limiter = rateLimit({
   message: { error: "requests have exceeded more than 10 a minute or you have used the max token in a minute, please try again in a minute." }
 });
 app.use('/gem', limiter);
+app.use('/', (req, res)=>{
+  console.log(`from this ${req.url} using the ${req.method} method`); 
+})
 
 const genAI = new GoogleGenAI({});
+
 
 app.post('/gem', async (req, res) => {
   try {
@@ -58,4 +62,4 @@ app.post('/gem', async (req, res) => {
   }
 });
 
-app.listen(port, () => console.log(`Server running on port ${port}`));
+app.listen(port, () => {console.log(`Server listening at http://localhost:${port}`);});

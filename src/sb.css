@@ -31,21 +31,21 @@
 .nd {display: flex;position: fixed;top: 12px;left: 50%;transform: translateX(-50%);align-items: center;padding-inline: 22px;
  width: 99%;z-index: -3;border-radius: 16px;margin-inline: auto;font-family: "poppins", sans-serif;justify-content: space-between;
  max-width: 1230px;letter-spacing: 0.1mm;min-height: 60px;}
-.n {display: flex;align-items: center;padding: 0px;height: 57px;gap: 28px;margin-inline-start: 24px;position: relative;}
+.n {display: flex;align-items: center;padding: 0px;height: 57px;gap: 28px;margin-inline-start: 24px;position: relative;z-index: -4;}
 .pd2 {display: flex;}
 .pd2:hover{cursor: pointer;}
-.n a:not(.n > a) {font-weight: 600;display: flex;height: 50px;align-content: center;}
-.prp {font-weight: 500;font-size: 16px;align-content: center;}
+.n a:not(.n > a) {font-weight: 600;display: flex;height: 50px;align-items: center;display: flex;}
+.prp {font-weight: 500;font-size: 16px;align-items: center;display: flex;}
 button {border: 1px solid #33333321;box-shadow: -2px 2px 4px #33333399;background: #ffffff76;border-radius: 6px;padding: 6px;min-height: 45px;align-content: center;}
+button:hover {cursor: pointer}
 #sb-btn {min-height: 43px;margin-inline: 24px 0px;padding-block-end: 1px;}
-button:active, .sbs:active, a:active {transform: scale(0.94);}
-button:focus-visible, a:focus-visible {outline: 2px solid var(--b1);outline-offset: 3px;}
-button:focus, a:focus, .sbs:focus, button:hover {font-size: 105%;transition: font-size 0.4s ease-out;cursor: pointer;border-radius: 4px;}
+.sbs:active, a:active,button:active {transform: scale(0.94);}
+a:focus-visible {outline: 2px solid var(--b1);outline-offset: 3px;border-radius: 4px;}
+a:focus-visible {font-size: 19px;transition: font-size 0.4s ease-out;cursor: pointer;border-radius: 4px;outline: 2px solid var(--b1);outline-offset: 3px;}
 .prs {fill: var(--b1);margin: 2px 0px 0px 4px;}
 .prj {visibility: hidden;opacity: 0;transform: translateY(-10px);color: var(--d);position: absolute;top: 48px;left: -16px;transition: var(--uls);list-style-type: none;}
 .uls {visibility: visible;font-weight: 600;opacity: 1;transform: translateY(0);transition: var(--uls);background: #ffffff;border: 2px solid #63636333;border-radius: 12px;padding: 8px;width: max-content;}
 a {text-decoration: none;display: inline-block;letter-spacing: 0.02rem;font-size: 1rem;color: inherit;align-items: center;font-weight: 600;}
-a:hover:not(.li a, .bread a) {text-decoration: underline;font-size: 109%;transition: font-size 0.4s ease-in;}
 .ld {display: flex;align-items: center;}
 
 .sbs {width: 30px;height: 30px;fill: var(--d);margin: 0px;}
@@ -53,7 +53,8 @@ a:hover:not(.li a, .bread a) {text-decoration: underline;font-size: 109%;transit
 .sbb {visibility: visible;opacity: 1; transform: translateX(0);transition: var(--uls);background: none;border-radius: 12px;-webkit-backdrop-filter: blur(4.5px);backdrop-filter: blur(4.5px);border: 3px solid #63636333;z-index: 30;}
 .sb li {font-weight: 600;padding-block: 14px;font-size: 21px;}
 .sb ul {padding-inline: 32px 16px;margin-block-start: 13px;}
-.bread a {font-size: 19px;padding-inline-end: 4px;}
+.bread {z-index: -5;}
+.bread a {font-size: 19px;padding-inline-end: 4px;z-index: -6;}
 .bsp {font-size: 16px;position: absolute;color: #013ac5;}
 .ba2 {padding-inline-start: 17px;}
 .ca, .ba2 {color: #013ac5;}
@@ -62,19 +63,21 @@ a:hover:not(.li a, .bread a) {text-decoration: underline;font-size: 109%;transit
 .main {margin: 88px 0px 32px 4px;}
 .sbf {min-width: 90%;width: 90%;margin-inline: auto;align-self: flex-end;display: flex;border-radius: 12px;flex: 1;gap: 16px;}
 #sbi {flex: 1;border-radius: 8px;min-height: 28px;max-height: 150px;width: 100%;overflow: hidden;resize: none;color: var(--d);border: 2px solid #00000039;background-color: hsl(0, 0%, 100%);padding: 9px;align-content: center;}
+
 #sub {background-color: #fff;height: 51px;align-self: flex-end;margin-block-end: 4px;}
 
-.result {width: 90%;margin: 24px auto 40px auto;max-height: max-content;min-height: 500px;padding-block:8px 23px;border-radius: 12px;background-color: hsl(0, 0%, 95%);border: 2px solid #00000039;}
+.result {width: 90%;margin: 24px auto 40px auto;max-height: max-content;min-height: 500px;padding-block:8px 23px;border-radius: 12px;background-color: var(--bl);border: 2px solid #00000039;color: hsl(0, 0%, 5%);z-index: 5;}
+.big-text {font-size: 28px;display: flex;justify-content: center;padding: 32px;color: hsl(0, 0%, 5%);}
 #ct {margin: 16px auto 0px auto;max-width: 700px;}
-#ct p {max-width: 700px;margin-inline: 6px;}
-#ema {width: 142px;padding:2px;margin: 1px;}
+#ct p {max-width: 700px;margin-inline: 6px;display: flex;justify-content: space-evenly;}
+#ema {width: 140px;padding:2px;margin: 1px;display: inline-flex;justify-content: center;}
 #ema:hover {cursor: copy;}
 footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 6px;text-align: center;}
 
 [data-theme="dark"] {
-  .n a, .prp, .sb li, footer, #sub, #ct p{color: var(--l);transition: var(--anim2)}
-  button {box-shadow: -2px 2px 4px #d1d1d133;border: 1px solid #dedede39;background: #0000002a;}
-  button:focus-visible, a:focus-visible {outline: 2px solid var(--dg);outline-offset: 3px;}
+  .n a, .prp, .sb li, footer, #sub, #ct p, .result{color: var(--l);transition: var(--anim2)}
+  button {box-shadow: -2px 2px 4px #9b9b9b33;border: 1px solid #dedede39;background: #0000002a;}
+  a:focus-visible,button:focus-visible {outline: 2px solid var(--dg);outline-offset: 3px;}
   .prs {fill: var(--dg);margin: 2px 0px 0px 4px;}
   .uls {transition: var(--uls);}
   .sb {border: 3px solid #90909039;}
@@ -86,7 +89,8 @@ footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 
   .ca, .ba2 {color: #00a200;}
   #sbi {border: 2px solid hsla(0, 0%, 90%, 0.25);background-color: hsl(0, 0%, 4%);color: var(--l);}
   #sub {background-color: hsl(0, 0%, 4%);border: 2px solid hsla(0, 0%, 90%, 0.25);box-shadow: none;}
-  .result {background-color: hsl(0, 0%, 5%);transition: var(--anim);border: 2px solid #e6e6e640;color: var(--l);}
+  .result {background-color: var(--bd);transition: var(--anim);border: 2px solid #e6e6e640;color: hsl(0, 0%, 95%);}
+  .big-text{color: hsl(0, 0%, 95%);}
 }
 
 @media screen and (max-width: 544px) { .bread a{font-size: 17px;} #sbi {padding-block-start: 0px;} .p1{margin-block: 12px 12px;}}

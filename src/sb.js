@@ -82,7 +82,9 @@ sub.addEventListener('click', async (e) => {
     const query = inp.value.trim();
     if (!query) return;
 
-    res.textContent = 'searching...'
+    res.textContent = 'searching...';
+    res.classList.add('big-text');
+
     sub.disabled = true;
 
     try {
@@ -129,5 +131,6 @@ function reply(results) {
       UL.append(LI);
     })
     
-    res.append(UL);
+    res.innerHTML = UL;
 }
+

@@ -4,8 +4,8 @@ import cors from "cors";
 import { QdrantClient } from "@qdrant/js-client-rest";
 import { GoogleGenAI } from "@google/genai";
 import dotenv from 'dotenv'
-dotenv.config()
 
+dotenv.config()
 const app = express();
 const port = 3004;
 const COLLECTION_NAME = "gemii";
@@ -74,4 +74,4 @@ app.post("/search", async (req, res) => {
   }
 });
 
-app.listen(port, ()=>{`server running on ${port}`})
+app.listen(port, () => {console.log(`Server listening at http://localhost:${port}`);});
