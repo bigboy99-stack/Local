@@ -35,8 +35,9 @@
 .n {display: flex;align-items: center;padding: 0px;height: 57px;gap: 28px;margin-inline-start: 24px;position: relative;}
 .pd2 {display: flex;}
 .pd2:hover{cursor: pointer;}
+.lb {display: flex;align-items: center;font-size: 16px;font-weight: 500;color: var(--d);}
 .n a:not(.n > a) {font-weight: 600;display: flex;height: 50px;align-content: center;}
-.prp {font-weight: 500;font-size: 16px;display: flex;align-self: center;}
+.prp {font-weight: 500;font-size: 16px;display: flex;align-self: center;color: var(--d);}
 button {border: 1px solid #33333321;box-shadow: -2px 2px 4px #33333399;background: #ffffff76;border-radius: 6px;padding: 6px;min-height: 45px;align-content: center;}
 button:hover {cursor: pointer}
 #sb-btn {min-height: 43px;margin-inline: 24px 22px;padding-block-end: 1px;}
@@ -47,7 +48,6 @@ a:focus, #cbi:focus {font-size: 105%;transition: font-size 0.4s ease-in;cursor: 
 .prj {visibility: hidden;opacity: 0;transform: translateY(-10px);color: var(--d);position: absolute;top: 48px;left: -16px;transition: var(--uls);list-style-type: none;}
 .uls {visibility: visible;font-weight: 600;opacity: 1;transform: translateY(0);transition: var(--uls);background: #ffffff;border: 2px solid #63636333;border-radius: 12px;padding: 8px;width: max-content;}
 a {text-decoration: none;display: inline-block;letter-spacing: 0.02rem;font-size: 1rem;color: inherit;align-items: center;font-weight: 600;}
-a:hover:not(.li a, .bread a) {text-decoration: underline;font-size: 109%;transition: font-size 0.2s ease-out;}
 .ld {display: flex;align-items: center;}
 
 .sbs {width: 30px;height: 30px;fill: var(--d);margin: 0px;}

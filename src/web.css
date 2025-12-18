@@ -36,7 +36,7 @@
 .n {display: flex;align-items: center;padding: 0px;height: 57px;gap: 28px;margin-inline-start: 24px;position: relative;}
 .pd2 {display: flex;}
 .n a:not(.n > a) {font-weight: 600;display: flex;height: 50px;align-content: center;}
-.prp {font-weight: 500;font-size: 16px;display: flex;align-self: center;}
+.prp {font-weight: 500;font-size: 16px;display: flex;align-self: center;color: var(--d);}
 button {border: 1px solid #33333321;box-shadow: -2px 2px 4px #33333399;background: #ffffff76;border-radius: 6px;padding: 6px;align-content: center;min-height: 45px;}
 button:hover {cursor: pointer}
 #sb-btn {min-height: 43px;margin-inline: 24px 22px;padding-block-end: 1px;}

@@ -34,13 +34,14 @@
 .n {display: flex;align-items: center;padding: 0px;height: 57px;gap: 28px;margin-inline-start: 24px;position: relative;z-index: -4;}
 .pd2 {display: flex;}
 .pd2:hover{cursor: pointer;}
+
 .n a:not(.n > a) {font-weight: 600;display: flex;height: 50px;align-items: center;display: flex;}
 .prp {font-weight: 500;font-size: 16px;align-items: center;display: flex;}
 button {border: 1px solid #33333321;box-shadow: -2px 2px 4px #33333399;background: #ffffff76;border-radius: 6px;padding: 6px;min-height: 45px;align-content: center;}
 button:hover {cursor: pointer}
 #sb-btn {min-height: 43px;margin-inline: 24px 0px;padding-block-end: 1px;}
 .sbs:active, a:active,button:active {transform: scale(0.94);}
-a:focus-visible {outline: 2px solid var(--b1);outline-offset: 3px;border-radius: 4px;}
+a:focus-visible, #sbi:focus-visible {outline: 2px solid var(--b1);outline-offset: 3px;border-radius: 4px;}
 a:focus-visible {font-size: 19px;transition: font-size 0.4s ease-out;cursor: pointer;border-radius: 4px;outline: 2px solid var(--b1);outline-offset: 3px;}
 .prs {fill: var(--b1);margin: 2px 0px 0px 4px;}
 .prj {visibility: hidden;opacity: 0;transform: translateY(-10px);color: var(--d);position: absolute;top: 48px;left: -16px;transition: var(--uls);list-style-type: none;}
@@ -62,7 +63,7 @@ a {text-decoration: none;display: inline-block;letter-spacing: 0.02rem;font-size
 
 .main {margin: 88px 0px 32px 4px;}
 .sbf {min-width: 90%;width: 90%;margin-inline: auto;align-self: flex-end;display: flex;border-radius: 12px;flex: 1;gap: 16px;}
-#sbi {flex: 1;border-radius: 8px;min-height: 28px;max-height: 150px;width: 100%;overflow: hidden;resize: none;color: var(--d);border: 2px solid #00000039;background-color: hsl(0, 0%, 100%);padding: 8px;align-content: center;}
+#sbi {flex: 1;border-radius: 8px;min-height: 28px;max-height: 150px;width: 100%;overflow: hidden;resize: none;color: var(--d);border: 2px solid #00000039;background-color: hsl(0, 0%, 100%);padding: 8px;align-content: center;margin-inline-start: 4px;}
 
 #sub {background-color: #fff;height: 51px;align-self: flex-end;margin-block-end: 4px;color: var(--d);}
 
