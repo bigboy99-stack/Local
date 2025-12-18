@@ -45,7 +45,7 @@ button {align-content: center;background: #ffffff76;border: 1px solid #33333321;
 .sbs:active,a:active,button:active {transform: scale(0.94)}
 button:focus-visible {outline: 2px solid var(--b1);outline-offset: 3px;border-radius: 4px;}
 a:focus-visible {font-size: 19px;transition: font-size .2s ease-out;outline: 2px solid var(--b1);outline-offset: 3px;border-radius: 4px;}
-.prs {fill: var(--b1);margin: 2px 0 0 4px}
+.prs {fill: var(--b1);margin: 2px 0 0 4px;display: block;}
 .prj {color: var(--d);left: -16px;list-style-type: none;opacity: 0;position: absolute;top: 48px;transform: translateY(-10px);visibility: hidden}
 .prj,.uls {transition: var(--uls)}
 .uls {background: #fff;border: 2px solid #63636333;border-radius: 12px;opacity: 1;padding: 8px;transform: translateY(0);visibility: visible;width: max-content}

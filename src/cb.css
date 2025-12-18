@@ -79,7 +79,7 @@ a:hover:not(.li a, .bread a) {text-decoration: underline;font-size: 109%;transit
 .cbp {width: 90%;margin-inline: auto;}
 .cbf {min-width: 90%;width: 90%;margin-inline: auto;align-self: flex-end;display: flex;border-radius: 12px;flex: 1;gap: 16px;}
 #cbi {flex: 1;border-radius: 8px;min-height: 28px;max-height: 150px;width: 100%;overflow: hidden;resize: none;color: var(--d);border: 2px solid #00000039;background-color: hsl(0, 0%, 100%);padding: 9px;align-content: center;}
-#sub {background-color: #fff;height: max-content;align-self: flex-end;margin-block-end: 4px;box-shadow: none;}
+#sub {background-color: #fff;height: max-content;align-self: flex-end;margin-block-end: 4px;box-shadow: none;color: var(--d);}
 
 #ct {margin: 16px auto 0px auto;max-width: 700px;}
 #ct p {max-width: 700px;margin-inline: 6px;display: flex;justify-content: space-evenly;}

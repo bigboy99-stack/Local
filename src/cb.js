@@ -118,8 +118,8 @@ sub.addEventListener('click', async (e) => {
     inp.style.height = 'auto'; // Reset height
     sub.disabled = true;
 
-    let rr = reply('chat server');
-    rr.textContent = 'thinking...'
+    let rr = reply('chat server thinking');
+    rr.textContent = 'responding...'
     setTimeout(()=>ch.append(rr), 400)
 
     try {
@@ -141,6 +141,7 @@ sub.addEventListener('click', async (e) => {
 
         let ran2 = reply('chat server');
         ch.append(ran2);
+        rr.style.display = "none"
         while (true) {
             const { done, value } = await reader.read();
             if (done) break;
@@ -152,7 +153,11 @@ sub.addEventListener('click', async (e) => {
         }
 
       } catch (err) {
-        alert(err.message);
+        let ran3 = reply('chat server');
+        rr.style.display = "none"
+        ran3.textContent = 'too many requests, you have exceded your free tier limits';
+        setTimeout(()=>ch.append(ran3), 300)
+        // console.log(err.message);
       } finally {
         sub.disabled = false;
         inp.focus();
@@ -162,16 +167,11 @@ sub.addEventListener('click', async (e) => {
 function reply(className) {
     let ele1 = document.createElement('div');
     ele1.className = className;
-    // let ele2 = document.createElement('span');
-    // ele2.className = 'cbs'
-    // ele2.textContent = sender;
-    // ele1.append(ele2)
     return ele1;
 }
 
 function think(className) {
     let ele1 = document.createElement('div');
     ele1.className = className;
-    ele1.textContent = 'thinking...'
     return ele1;
 }
