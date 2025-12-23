@@ -1,12 +1,12 @@
 document.body.onload = initializeTheme,
 setTimeout( () => pd2.focus(), 200);
 const ld = document.querySelector(".lb")
-  , ht = document.querySelector("html")
-  , sb = document.querySelector(".sb")
-  , sv = document.querySelector(".sbs")
-  , hb = document.querySelector("#sb-btn")
-  , prj = document.querySelector(".prj")
-  , pd2 = document.querySelector(".pd2");
+const ht = document.querySelector("html")
+const sb = document.querySelector(".sb")
+const sv = document.querySelector(".sbs")
+const hb = document.querySelector("#sb-btn")
+const prj = document.querySelector(".prj")
+const pd2 = document.querySelector(".pd2");
 function initializeTheme() {
     "on" === localStorage.getItem("dark") ? "true" === ld.getAttribute("aria-checked") || (ld.setAttribute("aria-checked", "true"),
     ht.setAttribute("data-theme", "dark"),
