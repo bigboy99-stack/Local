@@ -54,7 +54,7 @@ a {text-decoration: none;display: inline-block;letter-spacing: 0.02rem;font-size
 .sbb {visibility: visible;opacity: 1; transform: translateX(0);transition: var(--uls);background: none;border-radius: 12px;-webkit-backdrop-filter: blur(4.5px);backdrop-filter: blur(4.5px);border: 3px solid #63636333;}
 .sbc {margin-block-start: 60px;}
 .sb li {font-weight: 600;padding-block: 14px;font-size: 21px;}
-.li1 {display: none;}
+.li1, .li2 {display: none;}
 .sb ul {padding-inline: 32px 16px;margin-block-start: 13px;}
 
 .bread {margin: 88px 0px 32px 4px;}
@@ -101,38 +101,3 @@ footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 
 @media screen and (max-width: 544px) { .h1 {font-size: 36px;} h2 {width: 100%;font-size: 27px;} .na2 {display: none;} .li1 {display: list-item;} .bread{margin-block: 80px 32px;width: max-content;margin-inline: auto;} .bread a{font-size: 17px;} .pa {font-size: 19px;}}
 @media screen and (max-width: 321px) { .sbs {margin-inline: 16px 20px;} .n {margin-inline-start: 20px;}}
 @media (prefers-reduced-motion: reduce) {:root {--anim: none;--anim2: none;--uls: none;}}
-
-@keyframes circle-reveal {
-  from { clip-path: circle(0% at var(--x) var(--y)); }
-  to { clip-path: circle(150% at var(--x) var(--y)); }
-}
-
-@keyframes circle-hide {
-  from { clip-path: circle(150% at var(--x) var(--y)); }
-  to { clip-path: circle(0% at var(--x) var(--y)); }
-}
-
-/* 2. Target the view-transition pseudo-elements */
-/* Target the *old* view being replaced (the page you are leaving) */
-::view-transition-old(root) {
-  /* The element being removed will shrink/hide */
-  animation: circle-hide var(--transition-duration) var(--transition-easing) forwards;
-}
-
-/* Target the *new* view replacing the old one (the page you are entering) */
-::view-transition-new(root) {
-  /* The element being added will grow/reveal */
-  animation: circle-reveal var(--transition-duration) var(--transition-easing) forwards;
-}
-
-/* 3. Handle Dark Mode for the transition colors */
-[data-theme="dark"]::view-transition-old(root),
-[data-theme="dark"]::view-transition-new(root) {
-  /* Ensure the new view transition uses the dark background */
-  background-color: var(--bd); 
-}
-
-/* Ensure the transition container covers the whole screen */
-::view-transition-group(root) {
-  isolation: isolate;
-}

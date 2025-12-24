@@ -7,6 +7,11 @@ const sv = document.querySelector(".sbs")
 const hb = document.querySelector("#sb-btn")
 const prj = document.querySelector(".prj")
 const pd2 = document.querySelector(".pd2");
+const aud = document.querySelector("audio");
+const auddiv = document.querySelector(".aud");
+
+auddiv.addEventListener('click', play)
+function play () {setTimeout(()=>aud.play(), 150);}
 function initializeTheme() {
     "on" === localStorage.getItem("dark") ? "true" === ld.getAttribute("aria-checked") || (ld.setAttribute("aria-checked", "true"),
     ht.setAttribute("data-theme", "dark"),
@@ -32,20 +37,20 @@ function toggleDropdown(t, e, o) {
     t.setAttribute("aria-expanded", "false")) : (e.classList.add(o),
     t.setAttribute("aria-expanded", "true"))
 }
-ld.onclick = two,
+ld.onclick = two
 hb.onclick = () => {
     toggleDropdown(hb, sb, "sbb")
 }
-,
+
 pd2.onclick = () => {
     toggleDropdown(pd2, prj, "uls")
 }
-,
+
 document.addEventListener("keydown", t => {
     "Escape" === t.key && sb.classList.contains("sbb") && toggleDropdown(hb, sb, "sbb"),
     "Escape" === t.key && prj.classList.contains("uls") && toggleDropdown(pd2, prj, "uls")
 }
-),
+)
 document.addEventListener("click", t => {
     !sb.classList.contains("sbb") || sb.contains(t.target) || hb.contains(t.target) || toggleDropdown(hb, sb, "sbb"),
     !prj.classList.contains("uls") || prj.contains(t.target) || pd2.contains(t.target) || toggleDropdown(pd2, prj, "uls")
