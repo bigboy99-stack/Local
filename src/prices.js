@@ -19,6 +19,7 @@ const sel = document.querySelector("#sel");
 const selii = document.querySelector("#sel-ii");
 const iniPayment = document.querySelector(".ini");
 const remPayment = document.querySelector(".rem");
+let CT;
 
 const sa = ["SB","EC","ED","HC","RE","PE","EN","LF"]
 const pm = "PAGES MINIMUM"
@@ -31,13 +32,11 @@ selii.onchange = () => {
 
     // Logic to update the total based on selection
     if (type === "PE") {
-        total.textContent = `$${400 * pageCount + 30}`;
-    } else if (type === "SB" || type === "ED" || type === "HC" || type === "RE" || type === "LF") {
-        total.textContent = `$${400 * pageCount + 150}`;
+        total.textContent = `$${400 * pageCount + 30}`; CT = 400 * pageCount;
+    } else if (type === "SB" || type === "ED" || type === "HC" || type === "RE" || type === "LF" || type === "EN") {
+        total.textContent = `$${400 * pageCount + 150}`; CT = 400 * pageCount; 
     } else if (type === "EC") {
-        total.textContent = `$${400 * pageCount + 300}`;
-    } else if (type === "EN") {
-        total.textContent = `$${400 * pageCount + 120}`;
+        total.textContent = `$${400 * pageCount + 300}`; CT = 400 * pageCount;
     }
 
     // After updating total, calculate the 30/70 split
@@ -46,27 +45,29 @@ selii.onchange = () => {
 
 sel.onchange = () => {
     selii.selectedIndex = 0;
-    // Define your base page numbers
     let startPage1 = 1;
-    let startPage4 = 4;
     let startPage5 = 5;
-    let startPage10 = 10;
 
     switch (sel.value) {
         case "SB": // Small Business
         case "ED": // Educational
         case "HC": // Healthcare
         case "RE": // Real Estate
-        case "LF": // Law Firm
+        case "LF":
+        case "EN": // Law Firm
             fl(startPage5);
             host.textContent = '150';
             total.textContent = `$2150`;
+            CT = 2000;
+            updatePaymentSplits(); 
             pages[0].textContent = `5 ${pm}`;
             break;
 
         case "EC": // E-Commerce
             host.textContent = '300';
-            total.textContent = `$4300`; 
+            total.textContent = `$4300`;
+            CT = 4000;
+            updatePaymentSplits(); 
             pages[0].textContent = `10 ${pm}`;
             pages[1].textContent = `12 ${p}`; 
             pages[2].textContent = `14 ${p}`;
@@ -79,22 +80,13 @@ sel.onchange = () => {
             fl(startPage1); 
             host.textContent = '30';
             total.textContent = `$430`; 
+            CT = 400;
+            updatePaymentSplits(); 
             pages[0].textContent = `1 PAGE MINIMUM`;
             break;
-
-        case "EN": // Entertainment
-            fl(startPage4); 
-            host.textContent = '120'; 
-            total.textContent = `$1720`; 
-            pages[0].textContent = `4 ${pm}`;
-            break;
-
         default:
             console.log("Unknown website type selected");
     }
-    
-    // Crucial: Update the 30/70 split immediately after the total changes
-    updatePaymentSplits(); 
 }
 
 copy[0].onclick = () => {
@@ -139,18 +131,11 @@ document.addEventListener("click", t => {
 );
 
 // 1. Create a reusable function to update the 30/70 split
-function updatePaymentSplits() {
-    // Extract number from "$430" string (removes the '$' and converts to Number)
-    let currentTotal = Number(total.textContent.replace(/[^0-9.-]+/g, ""));
-    
-    if (!isNaN(currentTotal)) {
-        let initial = currentTotal * 0.3;
-        let remaining = currentTotal * 0.7;
-
-        // Update the text in the HTML classes
-        iniPayment.textContent = `initial payment: $${initial.toFixed(0)}`;
-        remPayment.textContent = `remaining payment: $${remaining.toFixed(0)}`;
-    }
+function updatePaymentSplits() {   
+    let initial = CT * 0.3;
+    let remaining = CT * 0.7 + Number(host.textContent);
+    iniPayment.textContent = `initial payment: $${initial.toFixed(0)}`;
+    remPayment.textContent = `remaining payment: $${remaining.toFixed(0)}`;
 }
 
 function initializeTheme() {

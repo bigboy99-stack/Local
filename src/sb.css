@@ -69,9 +69,9 @@ a {text-decoration: none;display: inline-block;letter-spacing: 0.02rem;font-size
 
 .result {width: 90%;margin: 24px auto 40px auto;max-height: max-content;min-height: 500px;padding-block:8px 23px;border-radius: 12px;background-color: var(--bl);border: 2px solid #00000039;color: hsl(0, 0%, 5%);z-index: 5;}
 .big-text {font-size: 28px;display: flex;justify-content: center;padding: 32px;color: hsl(0, 0%, 5%);}
-#ct {margin: 16px auto 0px auto;max-width: 700px;}
-#ct p {max-width: 700px;margin-inline: 6px;display: flex;justify-content: space-evenly;}
-#ema {width: 140px;padding:2px;margin: 1px;display: inline-flex;justify-content: center;}
+#ct {margin: 64px auto 0px auto;}
+#ct p {max-width: max-content;margin-inline: auto;justify-content: center;}
+#ema {width: 176px;min-height: 45px;padding:6px;margin: 1px;display: inline-flex;justify-content: center;border-radius: 8px;font-size: 16px;}
 #ema:hover {cursor: copy;}
 footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 6px;text-align: center;}
 
@@ -85,7 +85,7 @@ footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 
   .sbs {fill: var(--l);}
   .bsp {color: var(--dg);}
   .p1 {color: var(--l);}
-  #ema {color: var(--d);}
+  #ema {background-color: hsl(0, 0%, 8%);color: var(--l);}
   .h1 {color: var(--dg);}
   .ca, .ba2 {color: #00a200;}
   #sbi {border: 2px solid hsla(0, 0%, 90%, 0.25);background-color: hsl(0, 0%, 4%);color: var(--l);}
@@ -94,6 +94,6 @@ footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 
   .big-text{color: hsl(0, 0%, 95%);}
 }
 
-@media screen and (max-width: 544px) { .bread a{font-size: 17px;} #sbi {padding-block-start: 0px;} .p1{margin-block: 12px 12px;}}
+@media screen and (max-width: 544px) { .bread a{font-size: 17px;} #sbi {padding-block-start: 0px;} .p1{margin-block: 12px 12px;} #ct {width: 280px;}}
 @media screen and (max-width: 321px) { .sbs {margin-inline: 16px 20px;} .n {margin-inline-start: 20px;}}
 @media (prefers-reduced-motion: reduce) {:root {--anim: none;--anim2: none;--uls: none;}}
